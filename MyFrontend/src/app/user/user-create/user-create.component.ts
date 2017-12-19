@@ -72,7 +72,13 @@ export class UserCreateComponent implements OnInit, OnDestroy {
           this.userForm.controls['email'].value,
           this.userForm.controls['password'].value,
           this.userForm.controls['mobileNo'].value)
-        this.userService.updateUser(user).subscribe();
+          this.userService.updateUser(user).subscribe(
+            res => {
+              this.userService.getAllUser();
+              this.router.navigate(['/user']);
+              console.log("done");
+            }
+        );
       } else {
         let user: User = new User(null,
           this.userForm.controls['firstName'].value,
@@ -80,12 +86,18 @@ export class UserCreateComponent implements OnInit, OnDestroy {
           this.userForm.controls['email'].value,
           this.userForm.controls['password'].value,
           this.userForm.controls['mobileNo'].value)
-        this.userService.saveUser(user).subscribe();
+          this.userService.saveUser(user).subscribe(
+            res => {
+              this.userService.getAllUser();
+              this.router.navigate(['/user']);
+              console.log("done");
+            }
+          );
 
       }
 
       this.userForm.reset();
-      this.router.navigate(['/user']);
+      //this.router.navigate(['/user']);
 
     }
   }
