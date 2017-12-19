@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-md-6">
       <section>
         <form novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()">
           <fieldset>
@@ -40,9 +40,14 @@
                    formControlName="mobileNo">
           </div>
 
+        <div>
           <button type="submit" class="btn btn-primary"  [disabled]="!userForm.valid" >Submit</button>
           <button type="button" class="btn btn-warning" (click)="redirectUserPage()">Cancel</button>
+        </div>
+        <br/>
+        <div>
           <pre>{{userForm.value | json}}</pre>
+        </div>
         </form>
       </section>
     </div>
