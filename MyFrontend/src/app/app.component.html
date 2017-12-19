@@ -1,6 +1,29 @@
-<nav>
-  <a routerLink="user">Users</a>
-  <a routerLink="user/create" >New User</a>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="">UserManagement</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="user">User List</a></li>
+      <li><a routerLink="user/create">New User</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
 </nav>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>User Management System</h1> 
+    <p>User management system restful API, built by spring boot in the backend and Angular 4 in the frontend.</p> 
+  </div>
+
+  <div>
+
+
+  </div>
+</div>
 
 <router-outlet></router-outlet>
